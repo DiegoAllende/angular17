@@ -1,0 +1,51 @@
+<section class="main">
+
+  <section class="movie">
+    <ng-container *ngFor="let item of listaMovies">
+      <div class="movie_card">
+        <section class="movie_card_info">
+          <p class="movie_card_info_average">{{item?.rate?.average}}</p>
+          <p class="movie_card_info_link"><a [href]="'https://cuevana.biz/'+ item?.url" target="_blank">Ver</a></p>
+          <p class="movie_card_info_anio">{{item?.releaseDate | date: "YYYY"}}</p>
+        </section>
+        <img class="movie_card_img" [srcset]="item?.images?.poster" alt="poster">
+        <h3 class="movie_card_title">{{item?.titles?.name}}</h3>
+        <p class="movie_card_genero">
+          <ng-container *ngIf="item?.genres">
+            <ng-container *ngFor="let genero of item.genres">
+              <span>{{genero.name}}</span>
+            </ng-container>
+          </ng-container>
+        </p>
+        <p class="movie_card_resume">{{item?.overview}}</p>
+      </div>
+    </ng-container>
+  </section>
+
+  <section class="controls">
+    <section class="controls_genero">
+      <select [(ngModel)]="frGenero" (ngModelChange)="changeGenero()">
+        <option value="accion">Acción</option>
+        <option value="aventura">Aventura</option>
+        <option value="animacion">Animacion</option>
+        <option value="ciencia-ficcion">Ciencia ficcion</option>
+        <option value="crimen">Crimen</option>
+        <option value="drama">Drama</option>
+        <option value="familia">Familia</option>
+        <option value="fantasia">Fantasia</option>
+        <option value="misterio">Misterio</option>
+        <option value="romance">Romance</option>
+        <option value="suspenso">Suspense</option>
+        <option value="terror">Terror</option>
+      </select>
+    </section>
+    <section class="controls_info">
+      <p class="controls_info_text">Pág. {{frPage}} de {{frTotal}}</p>
+    </section>
+    <section class="controls_pages">
+      <button class="controls_pages_btn controls_pages_btn_back" (click)="changePage(false)" [disabled]="frPage<2"></button>
+      <button class="controls_pages_btn controls_pages_btn_next" (click)="changePage(true)"></button>
+    </section>
+  </section>
+
+</section>
