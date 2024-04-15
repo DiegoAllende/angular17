@@ -1,0 +1,57 @@
+<section class="gcom_form">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <section class="gcom_form-acordion">
+      <details>
+        <summary>Información básica</summary>
+        <section class="form">
+          <section class="form-group">
+            <label>Tipo de Acción</label>
+            <input type="text" formControlName="tipoAccion">
+          </section>
+          <section class="form-group">
+            <label>Compañia</label>
+            <input type="text" formControlName="compania">
+          </section>
+          <section class="form-group">
+            <label>Cuenta Contable</label>
+            <input type="text" formControlName="cuentaContable">
+          </section>
+          <section class="form-group">
+            <label>Es Cuenta Balance</label>
+            <input type="text" formControlName="isCuentaContable">
+          </section>
+        </section>
+      </details>
+  
+      <details>
+        <summary>Información cuenta balance</summary>
+        <section class="form">
+          <section class="form-group">
+            <label>Tipo Cuenta</label>
+            <input type="text" formControlName="tipoCuenta">
+          </section>
+          <section class="form-group">
+            <label>Riesgo de análisis</label>
+            <input type="text" formControlName="riesgoAn">
+          </section>
+          <section class="form-group">
+            <label>Riesgo financiero</label>
+            <input type="text" formControlName="riesgoFi">
+          </section>
+          <section class="form-group">
+            <label>Otros comentarios</label>
+            <input type="text" formControlName="comentario">
+          </section>
+        </section>
+      </details>
+
+      <section>
+        <button type="submit">GUARDAR</button>
+      </section>
+    </section>
+  </form>
+</section>
+
+<pre>
+  {{ myForm.value | json }}
+</pre>

@@ -1,0 +1,11 @@
+<section class="alta_cuenta">
+  <ul>
+    <li [routerLink]="['/public/gestion-comprobantes/alta-cuentas/solicitud']" routerLinkActive="router-link-active">SOLICITUD</li>
+    <li [routerLink]="['/public/gestion-comprobantes/alta-cuentas/validacion']" routerLinkActive="router-link-active">VALIDACIÓN</li>
+    <li [routerLink]="['/public/gestion-comprobantes/alta-cuentas/aprobacion']" routerLinkActive="router-link-active">APROBACIÓN</li>
+    <li [routerLink]="['/public/gestion-comprobantes/alta-cuentas/aprobados']" routerLinkActive="router-link-active">APROBADOS</li>
+  </ul>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</section>

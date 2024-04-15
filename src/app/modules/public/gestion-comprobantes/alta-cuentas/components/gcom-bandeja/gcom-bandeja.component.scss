@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+
+  thead {
+    background-color: rgb(12, 96, 67);
+    color: #fff;
+  }
+
+  tbody {
+    tr {
+      background-color: #fff;
+    }
+    tr:nth-child(2n) {
+      background-color: rgb(178, 226, 210);
+    }
+  }
+}

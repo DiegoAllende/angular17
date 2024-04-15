@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <th>Acciones</th>
+      <th>Código</th>
+      <th>Estado</th>
+      <th>Estado flujo</th>
+      <th>Tipo acción</th>
+      <th>Empresa</th>
+      <th>Tipo cuenta</th>
+      <th>Cuenta contable</th>
+      <th>Moneda</th>
+      <th>Descripción</th>
+      <th>Cuenta balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of list">
+      <tr>
+        <td>
+          <button (click)="btnEdit(item)">Editar</button>
+        </td>
+        <td>{{ item.id }}</td>
+        <td>{{ item.desEstado }}</td>
+        <td>{{ item.estadoFlujo }}</td>
+        <td>{{ item.tipoAccion }}</td>
+        <td>{{ item.desEmpresa }}</td>
+        <td>{{ item.tipoCuenta }}</td>
+        <td>{{ item.cuentaContable }}</td>
+        <td>{{ item.desMoneda }}</td>
+        <td>{{ item.descripcion }}</td>
+        <td>{{ item.cuentaBalance }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
